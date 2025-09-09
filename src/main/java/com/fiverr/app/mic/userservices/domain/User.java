@@ -1,6 +1,5 @@
 package com.fiverr.app.mic.userservices.domain;
 
-import com.fiverr.app.mic.userservices.api.service.dto.UserStatus;
 import lombok.*;
 
 import java.util.List;
@@ -20,10 +19,6 @@ public class User {
     private String email;
     private String password;
     @Builder.Default
-    private UserStatus status = UserStatus.ACTIVE;
+    private Boolean active = true;
     private List<Role> roles;
-    @Builder.Default
-    private Boolean enabled = true;
-
-
 }

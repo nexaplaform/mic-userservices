@@ -21,8 +21,7 @@ public interface UserDtoMapper {
     @Mapping(target = "fullName", expression = "java(getFullName(user))")
     @Mapping(target = "phoneNumber", source = "phoneNumber")
     @Mapping(target = "email", source = "email")
-    @Mapping(target = "status", source = "status")
-        //@Mapping(target = "groups", source = "groups")
+    @Mapping(target = "active", source = "active")
     UserDtoOut toDto(User user);
 
     default String getFullName(User user) {

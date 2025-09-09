@@ -1,6 +1,5 @@
 package com.fiverr.app.mic.userservices.api.service.dto.out;
 
-import com.fiverr.app.mic.userservices.api.service.dto.UserStatus;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -33,8 +32,8 @@ public class UserDtoOut {
     @Schema(example = "John Doe")
     private String email;
 
-    @Schema(example = "ACTIVE")
-    private UserStatus status;
+    @Schema(example = "true")
+    private Boolean active;
 
     @ArraySchema(schema = @Schema(implementation = RoleDtoOut.class))
     private List<RoleDtoOut> roles;

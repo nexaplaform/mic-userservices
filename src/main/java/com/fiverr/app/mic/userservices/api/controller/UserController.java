@@ -25,8 +25,8 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public ResponseEntity<UserDtoOut> create(UserDtoIn dto, Long id) {
-        return UserApi.super.create(dto, id);
+    public ResponseEntity<UserDtoOut> update(UserDtoIn dto, Long id) {
+        return UserApi.super.update(dto, id);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public ResponseEntity<List<UserDtoOut>> findAll(Integer page, Integer size, String sort, SortEnumDTO sortDirection) {
-        return UserApi.super.findAll(page, size, sort, sortDirection);
+    public ResponseEntity<List<UserDtoOut>> findAll(Integer page, Integer size, SortEnumDTO sortDirection) {
+        return UserApi.super.findAll(page, size, sortDirection);
     }
 }

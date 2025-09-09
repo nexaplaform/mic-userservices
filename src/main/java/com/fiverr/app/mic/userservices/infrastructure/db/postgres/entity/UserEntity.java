@@ -1,6 +1,5 @@
 package com.fiverr.app.mic.userservices.infrastructure.db.postgres.entity;
 
-import com.fiverr.app.mic.userservices.api.service.dto.UserStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,8 +36,7 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "status")
-    @Enumerated(EnumType.STRING)
-    private UserStatus status;
+    @Column(name = "active")
+    private Boolean active;
 
 }

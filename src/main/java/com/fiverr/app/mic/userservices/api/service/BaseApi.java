@@ -20,16 +20,16 @@ public interface BaseApi<I, O, K> {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     @Operation(
             summary = "Update record.",
             description = "Update a record by id."
     )
-    default ResponseEntity<O> create(@RequestBody I dto, @PathVariable K id) {
+    default ResponseEntity<O> update(@RequestBody I dto, @PathVariable K id) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     @Operation(
             summary = "Get record by id.",
             description = "Search a record by id."
@@ -38,7 +38,7 @@ public interface BaseApi<I, O, K> {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     @Operation(
             summary = "Delete record",
             description = "Delete record by id."
@@ -55,7 +55,6 @@ public interface BaseApi<I, O, K> {
     default ResponseEntity<List<O>> findAll(
             @RequestParam(required = true, defaultValue = "0") Integer page,
             @RequestParam(required = true, defaultValue = "9") Integer size,
-            @RequestParam(required = false, defaultValue = "id") String sort,
             @RequestParam(required = false, defaultValue = "ASC") SortEnumDTO sortDirection
 
     ) {
