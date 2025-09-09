@@ -33,6 +33,8 @@ public class UserDtoIn {
     @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private String password;
 
+    private Boolean enabled;
+
     @Schema(description = "Lista de roles del usuario", example = "[1, 2]")
     private List<Long> roles;
 }

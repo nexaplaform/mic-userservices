@@ -2,7 +2,7 @@ spring:
   application:
     name: mic-userservices
 
-  profile:
+  profiles:
     active: ${PROFILE:local}
 
   springdoc:
