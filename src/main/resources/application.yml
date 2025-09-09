@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mic-userservices
+
+  profile:
+    active: ${PROFILE:local}
+
+  springdoc:
+    show-actuator: true
