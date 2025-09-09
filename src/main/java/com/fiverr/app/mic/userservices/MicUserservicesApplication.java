@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @OpenAPIDefinition(servers = {
-        @Server(url = "/", description = "Default Server"),
         @Server(url = "https://mic-userservices-production.up.railway.app/", description = "Production Server")
 })
 public class MicUserservicesApplication {
