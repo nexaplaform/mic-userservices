@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.With;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @Data
 @With
 @Entity
@@ -38,5 +40,12 @@ public class UserEntity {
 
     @Column(name = "active")
     private Boolean active;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private List<RoleEntity> roles;
 
 }
