@@ -45,7 +45,7 @@ public class UserUseCaseImpl implements UserUseCase {
         User user = this.uRepository.getById(id);
         BeanUtils.copyProperties(userModel, user);
         user.setId(id);
-        return uRepository.update(userModel);
+        return uRepository.update(user);
     }
 
     @Override
