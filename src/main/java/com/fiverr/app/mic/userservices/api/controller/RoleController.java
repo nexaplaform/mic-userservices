@@ -39,7 +39,7 @@ public class RoleController implements RoleApi {
 
     @Override
     public ResponseEntity<RoleDtoOut> getById(Long id) {
-        return new ResponseEntity<>(mapper.toDtoOut(roleUseCase.getById(id)), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.toDtoOut(roleUseCase.getById(id)), HttpStatus.OK);
     }
 
     @Override

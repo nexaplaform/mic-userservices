@@ -10,7 +10,6 @@ import org.mapstruct.Named;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 @Mapper(componentModel = "spring")
 public interface UserDtoMapper {
@@ -18,21 +17,11 @@ public interface UserDtoMapper {
     @Mapping(target = "id", source = "id")
     @Mapping(target = "firstName", source = "firstName")
     @Mapping(target = "lastName", source = "lastName")
-    @Mapping(target = "fullName", expression = "java(getFullName(user))")
     @Mapping(target = "phoneNumber", source = "phoneNumber")
     @Mapping(target = "email", source = "email")
     @Mapping(target = "active", source = "active")
     @Mapping(target = "roles", source = "roles")
     UserDtoOut toDto(User user);
-
-    default String getFullName(User user) {
-        if (user == null) {
-            return null;
-        }
-        String firstName = Objects.isNull(user.getFirstName()) ? null : user.getFirstName();
-        String lastName = Objects.isNull(user.getLastName()) ? null : user.getLastName();
-        return firstName + " " + lastName;
-    }
 
     List<UserDtoOut> toDtoList(List<User> user);
 

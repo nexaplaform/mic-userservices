@@ -14,8 +14,7 @@ public interface BaseApi<I, O, K> {
     @PostMapping
     @Operation(
             summary= "Create record",
-            description = "Creation of record."
-    )
+            description = "Creation of record.")
     default ResponseEntity<O> create(@RequestBody I dto) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
@@ -23,8 +22,7 @@ public interface BaseApi<I, O, K> {
     @PutMapping("/{id}")
     @Operation(
             summary = "Update record.",
-            description = "Update a record by id."
-    )
+            description = "Update a record by id.")
     default ResponseEntity<O> update(@RequestBody I dto, @PathVariable K id) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
@@ -32,8 +30,7 @@ public interface BaseApi<I, O, K> {
     @GetMapping("/{id}")
     @Operation(
             summary = "Get record by id.",
-            description = "Search a record by id."
-    )
+            description = "Search a record by id.")
     default ResponseEntity<O> getById(@PathVariable K id) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
@@ -41,8 +38,7 @@ public interface BaseApi<I, O, K> {
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Delete record",
-            description = "Delete record by id."
-    )
+            description = "Delete record by id.")
     default ResponseEntity<Void> delete(@PathVariable K id) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
@@ -55,9 +51,7 @@ public interface BaseApi<I, O, K> {
     default ResponseEntity<List<O>> findAll(
             @RequestParam(required = true, defaultValue = "0") Integer page,
             @RequestParam(required = true, defaultValue = "9") Integer size,
-            @RequestParam(required = false, defaultValue = "ASC") SortEnumDTO sortDirection
-
-    ) {
+            @RequestParam(required = false, defaultValue = "ASC") SortEnumDTO sortDirection) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 }

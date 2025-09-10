@@ -23,9 +23,6 @@ public class UserDtoOut {
     @Schema(example = "Doe")
     private String lastName;
 
-    @Schema(example = "John Doe")
-    private String fullName;
-
     @Schema(example = "5 5555 5555")
     private String phoneNumber;
 
