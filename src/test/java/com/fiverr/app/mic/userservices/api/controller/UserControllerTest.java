@@ -13,9 +13,9 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.util.List;
 
-import static com.fiverr.app.mic.userservices.api.provider.RoleProvider.getRoleEntityOne;
-import static com.fiverr.app.mic.userservices.api.provider.RoleProvider.getRoleEntityTwo;
-import static com.fiverr.app.mic.userservices.api.provider.UserProvider.*;
+import static com.fiverr.app.mic.userservices.provider.RoleProvider.getRoleEntityOne;
+import static com.fiverr.app.mic.userservices.provider.RoleProvider.getRoleEntityTwo;
+import static com.fiverr.app.mic.userservices.provider.UserProvider.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class UserControllerTest extends BaseIntegration{
@@ -117,7 +117,7 @@ class UserControllerTest extends BaseIntegration{
 
         List<UserDtoOut> users = client
                 .get()
-                .uri(USER_PATH + "?page=0&size=9&sort=ASC")
+                .uri(USER_PATH)
                 .exchange()
                 .expectHeader().contentType(MediaType.APPLICATION_JSON)
                 .expectStatus().isOk()

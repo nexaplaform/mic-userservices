@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 
 import java.util.List;
 
-import static com.fiverr.app.mic.userservices.api.provider.RoleProvider.*;
+import static com.fiverr.app.mic.userservices.provider.RoleProvider.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class RoleControllerTest extends BaseIntegration {
@@ -101,7 +101,7 @@ class RoleControllerTest extends BaseIntegration {
         roleJpaRepository.saveAll(List.of(getRoleEntityOne(), getRoleEntityTwo()));
 
         List<RoleDtoOut> roles = client.get()
-                .uri(PATH + "?page=0&size=10&sort=ASC")
+                .uri(PATH)
                 .exchange()
                 .expectStatus().isOk()
                 .expectHeader().contentType(MediaType.APPLICATION_JSON)

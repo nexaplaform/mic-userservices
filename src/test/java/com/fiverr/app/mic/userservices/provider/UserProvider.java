@@ -1,4 +1,4 @@
-package com.fiverr.app.mic.userservices.api.provider;
+package com.fiverr.app.mic.userservices.provider;
 
 import com.fiverr.app.mic.userservices.api.service.dto.in.UserDtoIn;
 import com.fiverr.app.mic.userservices.api.service.dto.out.UserDtoOut;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-import static com.fiverr.app.mic.userservices.api.provider.CommonProvider.ID_ONE;
-import static com.fiverr.app.mic.userservices.api.provider.CommonProvider.ID_TWO;
-import static com.fiverr.app.mic.userservices.api.provider.RoleProvider.*;
+import static com.fiverr.app.mic.userservices.provider.CommonProvider.ID_ONE;
+import static com.fiverr.app.mic.userservices.provider.CommonProvider.ID_TWO;
+import static com.fiverr.app.mic.userservices.provider.RoleProvider.*;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserProvider {

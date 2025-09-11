@@ -7,10 +7,6 @@ import com.fiverr.app.mic.userservices.infrastructure.db.postgres.entity.UserEnt
 import com.fiverr.app.mic.userservices.infrastructure.db.postgres.mapper.UserEntityMapper;
 import com.fiverr.app.mic.userservices.infrastructure.db.postgres.repository.UserJpaRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -44,13 +40,8 @@ public class UserRepositoryAdapter implements UserRepository {
     }
 
     @Override
-    public List<User> findAll(Integer page, Integer size, String sort) {
-        String sortProperty = "id";
-        Sort.Direction direction = Sort.Direction.fromString(sort);
-        Sort sortObject = Sort.by(direction, sortProperty);
-        Pageable pageable = PageRequest.of(page, size, sortObject);
-        Page<UserEntity> userEntity = repository.findAll(pageable);
-        return mapper.toModelList(userEntity.getContent());
+    public List<User> findAll() {
+        return mapper.toModelList(repository.findAll());
     }
 
     @Override

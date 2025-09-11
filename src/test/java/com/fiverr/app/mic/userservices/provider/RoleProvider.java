@@ -1,4 +1,4 @@
-package com.fiverr.app.mic.userservices.api.provider;
+package com.fiverr.app.mic.userservices.provider;
 
 import com.fiverr.app.mic.userservices.api.service.dto.in.RoleDtoIn;
 import com.fiverr.app.mic.userservices.api.service.dto.out.RoleDtoOut;
@@ -7,8 +7,8 @@ import com.fiverr.app.mic.userservices.infrastructure.db.postgres.entity.RoleEnt
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import static com.fiverr.app.mic.userservices.api.provider.CommonProvider.ID_ONE;
-import static com.fiverr.app.mic.userservices.api.provider.CommonProvider.ID_TWO;
+import static com.fiverr.app.mic.userservices.provider.CommonProvider.ID_ONE;
+import static com.fiverr.app.mic.userservices.provider.CommonProvider.ID_TWO;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RoleProvider {

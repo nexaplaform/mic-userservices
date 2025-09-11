@@ -1,4 +1,4 @@
-package com.fiverr.app.mic.userservices.api.provider;
+package com.fiverr.app.mic.userservices.provider;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

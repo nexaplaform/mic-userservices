@@ -16,7 +16,7 @@ public interface BaseRepository<T, K> {
 
     default T update(T model) {return null; }
 
-    default List<T> findAll(Integer page, Integer size, String sort) { return Collections.emptyList(); }
+    default List<T> findAll() { return Collections.emptyList(); }
 
     default void deleteById(K id) { }
 }

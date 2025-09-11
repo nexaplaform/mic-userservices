@@ -49,8 +49,8 @@ public class UserUseCaseImpl implements UserUseCase {
     }
 
     @Override
-    public List<User> findAll(Integer page, Integer size, String sort) {
-        return uRepository.findAll(page, size, sort);
+    public List<User> findAll() {
+        return uRepository.findAll();
     }
 
     @Override

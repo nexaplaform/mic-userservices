@@ -34,8 +34,8 @@ public class RoleUseCaseImpl implements RoleUseCase {
     }
 
     @Override
-    public List<Role> findAll(Integer page, Integer size, String sort) {
-        return repository.findAll(page, size, sort);
+    public List<Role> findAll() {
+        return repository.findAll();
     }
 
     @Override

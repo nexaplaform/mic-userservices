@@ -1,6 +1,5 @@
 package com.fiverr.app.mic.userservices.api.service;
 
-import com.fiverr.app.mic.userservices.api.service.dto.in.SortEnumDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,10 +47,7 @@ public interface BaseApi<I, O, K> {
             summary = "Get paginated record",
             description = "Get all records paginated."
     )
-    default ResponseEntity<List<O>> findAll(
-            @RequestParam(required = true, defaultValue = "0") Integer page,
-            @RequestParam(required = true, defaultValue = "9") Integer size,
-            @RequestParam(required = false, defaultValue = "ASC") SortEnumDTO sortDirection) {
+    default ResponseEntity<List<O>> findAll() {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 }

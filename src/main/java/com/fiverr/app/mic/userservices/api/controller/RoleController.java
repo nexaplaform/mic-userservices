@@ -2,7 +2,6 @@ package com.fiverr.app.mic.userservices.api.controller;
 
 import com.fiverr.app.mic.userservices.api.service.RoleApi;
 import com.fiverr.app.mic.userservices.api.service.dto.in.RoleDtoIn;
-import com.fiverr.app.mic.userservices.api.service.dto.in.SortEnumDTO;
 import com.fiverr.app.mic.userservices.api.service.dto.out.RoleDtoOut;
 import com.fiverr.app.mic.userservices.api.service.mapper.RoleDtoMapper;
 import com.fiverr.app.mic.userservices.application.usecase.RoleUseCase;
@@ -49,7 +48,7 @@ public class RoleController implements RoleApi {
     }
 
     @Override
-    public ResponseEntity<List<RoleDtoOut>> findAll(Integer page, Integer size, SortEnumDTO sortDirection) {
-        return new ResponseEntity<>(mapper.toDtoOutList(roleUseCase.findAll(page, size, sortDirection.getValue())), HttpStatus.OK);
+    public ResponseEntity<List<RoleDtoOut>> findAll() {
+        return new ResponseEntity<>(mapper.toDtoOutList(roleUseCase.findAll()), HttpStatus.OK);
     }
 }

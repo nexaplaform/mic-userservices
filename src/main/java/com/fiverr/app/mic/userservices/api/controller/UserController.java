@@ -1,7 +1,6 @@
 package com.fiverr.app.mic.userservices.api.controller;
 
 import com.fiverr.app.mic.userservices.api.service.UserApi;
-import com.fiverr.app.mic.userservices.api.service.dto.in.SortEnumDTO;
 import com.fiverr.app.mic.userservices.api.service.dto.in.UserDtoIn;
 import com.fiverr.app.mic.userservices.api.service.dto.out.UserDtoOut;
 import com.fiverr.app.mic.userservices.api.service.mapper.UserDtoMapper;
@@ -49,7 +48,7 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public ResponseEntity<List<UserDtoOut>> findAll(Integer page, Integer size, SortEnumDTO sortDirection) {
-        return new ResponseEntity<>(mapper.toDtoList(useCase.findAll(page, size, sortDirection.getValue())), HttpStatus.OK);
+    public ResponseEntity<List<UserDtoOut>> findAll() {
+        return new ResponseEntity<>(mapper.toDtoList(useCase.findAll()), HttpStatus.OK);
     }
 }
